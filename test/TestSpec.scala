@@ -7,6 +7,7 @@ class ExampleSpec extends FlatSpec with MustMatchers {
     val stack = new Stack[Int]
     stack.push(1)
     stack.push(2)
+    Tester.print("SPAM")
     stack.pop() mustBe (2)
     stack.pop() mustBe (1)
   }
@@ -16,5 +17,11 @@ class ExampleSpec extends FlatSpec with MustMatchers {
     a [NoSuchElementException] should be thrownBy {
       emptyStack.pop()
     }
+  }
+}
+
+object Tester {
+  def print(a: String) = {
+    println(a)
   }
 }
